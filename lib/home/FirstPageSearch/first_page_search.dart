@@ -10,6 +10,7 @@ class FirstPageSearch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller;
     return Center(
       child: Container(
         constraints: const BoxConstraints.expand(),
@@ -23,10 +24,19 @@ class FirstPageSearch extends StatelessWidget {
             children: [
               Container(
                 margin: (const EdgeInsets.all(20.0)),
-                color: const Color.fromARGB(195, 78, 77, 74),
-                child: const TextField(
-                  decoration: InputDecoration(hintText: 'Choose country'),
-                  style: TextStyle(fontSize: 20),
+                child: TextField(
+                  controller: controller,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: const Color.fromARGB(136, 122, 117, 117),
+                    prefixIcon: const Icon(Icons.search),
+                    hintText: 'Search by country ',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.grey),
+                    ),
+                  ),
+                  style: const TextStyle(fontSize: 20),
                 ),
               ),
               const SizedBox(height: 30),

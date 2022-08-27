@@ -36,10 +36,17 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
   webview_flutter: ^3.0.4
+  firebase_core: ^1.21.1
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^2.2.8
+flutter_native_splash:
+  image: images/lodka.jpg
+ 
+ 
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

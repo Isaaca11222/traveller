@@ -1,4 +1,3 @@
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
@@ -26,10 +25,11 @@ class _ThirdPageMapState extends State<ThirdPageMap> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: WebView(
         javascriptMode: JavascriptMode.unrestricted,
-        initialUrl: 'https://www.facebook.com',
+        initialUrl:
+            'https://www.google.pl/maps/@46.4801721,-9.6493011,3z/data=!5m1!1e4',
       ),
     );
   }

@@ -1,4 +1,3 @@
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
@@ -34,7 +33,7 @@ class FourthPageMyAccount extends StatelessWidget {
                       ),
                     ),
                     ElevatedButton(
-                      child: Text('Wyloguj'),
+                      child: const Text('Wyloguj'),
                       onPressed: () {},
                     ),
                   ],
