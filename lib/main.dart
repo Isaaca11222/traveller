@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traveller/LoginPage/login_page.dart';
 
 import 'package:traveller/home/home_page.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Traveller',
       theme: ThemeData(),
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }

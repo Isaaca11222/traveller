@@ -37,14 +37,14 @@ dependencies:
   google_fonts: ^3.0.1
   webview_flutter: ^3.0.4
   firebase_core: ^1.21.1
+  firebase_auth: ^3.7.0
   
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_native_splash: ^2.2.8
-flutter_native_splash:
-  image: images/lodka.jpg
+
  
  
 
