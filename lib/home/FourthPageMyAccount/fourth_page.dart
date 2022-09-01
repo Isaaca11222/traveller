@@ -27,7 +27,7 @@ class FourthPageMyAccount extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Moje konto',
+                      'Jesteś zalogowany jako ', //${user.email}
                       style: GoogleFonts.lato(
                         fontSize: 15,
                       ),
