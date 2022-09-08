@@ -29,6 +29,13 @@
             {
               "client_id": "752845340048-kl0iq6ga9l0oite0qhvad94gsdri5kim.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "752845340048-kndkrjnuai8ti1f1n602qv0amp4imuaq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wiktoriaholm.traveller"
+              }
             }
           ]
         }

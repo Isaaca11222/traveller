@@ -1,23 +1,28 @@
-import 'package:flutter/rendering.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
 import 'package:traveller/home/FirstPageSearch/first_page_search.dart';
+
 import 'package:traveller/home/FourthPageMyAccount/fourth_page.dart';
 import 'package:traveller/home/SecondPageList/second_page.dart';
 import 'package:traveller/home/ThirdPageMap/third_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({
+class HomePagee extends StatefulWidget {
+  const HomePagee({
     Key? key,
+    required this.user,
   }) : super(key: key);
 
+  final User user;
+
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePagee> createState() => _HomePageeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageeState extends State<HomePagee> {
   var currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +48,8 @@ class _HomePageState extends State<HomePage> {
         if (currentIndex == 2) {
           return const ThirdPageMap();
         }
-        return const FourthPageMyAccount();
+
+        return FourthPage2(user: widget.user);
       }),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -54,7 +60,7 @@ class _HomePageState extends State<HomePage> {
           });
         },
         backgroundColor:
-            const Color.fromARGB(255, 255, 255, 255).withOpacity(0.7),
+            const Color.fromARGB(228, 223, 215, 215).withOpacity(0.7),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
