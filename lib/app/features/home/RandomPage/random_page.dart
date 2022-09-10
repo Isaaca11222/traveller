@@ -15,8 +15,8 @@ class _RandomPageState extends State<RandomPage> {
   @override
   Widget build(BuildContext context) {
     var list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
-    final _random = new Random();
-    var result = list[_random.nextInt(list.length)];
+    final random = Random();
+    var result = list[random.nextInt(list.length)];
 
     return Scaffold(
       appBar: AppBar(
@@ -124,7 +124,7 @@ class _RandomPageState extends State<RandomPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

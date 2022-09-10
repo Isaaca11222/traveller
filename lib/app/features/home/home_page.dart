@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:flutter/material.dart';
-import 'package:traveller/home/FirstPageSearch/first_page_search.dart';
+import 'package:traveller/app/features/home/NavigationBar/FirstPageSearch/first_page_search.dart';
 
-import 'package:traveller/home/FourthPageMyAccount/fourth_page.dart';
-import 'package:traveller/home/SecondPageList/second_page.dart';
-import 'package:traveller/home/ThirdPageMap/third_page.dart';
+import 'package:traveller/features/home/NavigationBar/FourthPageMyAccount/fourth_page.dart';
+import 'package:traveller/features/home/NavigationBar/SecondPageList/second_page.dart';
+import 'package:traveller/features/home/NavigationBar/ThirdPageMap/third_page.dart';
 
 class HomePagee extends StatefulWidget {
   const HomePagee({

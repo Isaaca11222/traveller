@@ -1,11 +1,10 @@
-import 'dart:math';
-
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
-import 'package:traveller/home/CountriesList/countries.dart';
-import 'package:traveller/home/Page/country_page.dart';
-import 'package:traveller/home/RandomPage/random_page.dart';
+import 'package:traveller/app/features/home/Page/country_page.dart';
+import 'package:traveller/features/home/CountriesList/countries.dart';
+
+import 'package:traveller/features/home/RandomPage/random_page.dart';
 
 class FirstPageSearch extends StatefulWidget {
   const FirstPageSearch({
@@ -25,7 +24,6 @@ class _FirstPageSearchState extends State<FirstPageSearch> {
     final style = controller.text.isEmpty
         ? const TextStyle(color: Colors.black54)
         : const TextStyle(color: Colors.black);
-    final _random = new Random();
 
     return Scaffold(
       body: Center(
@@ -100,7 +98,8 @@ class _FirstPageSearchState extends State<FirstPageSearch> {
                 const SizedBox(height: 100),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: const Color.fromARGB(166, 34, 29, 29)),
+                    primary: const Color.fromARGB(166, 34, 29, 29),
+                  ),
                   child: const Text('Draw random'),
                   onPressed: () {
                     Navigator.of(context).push(
