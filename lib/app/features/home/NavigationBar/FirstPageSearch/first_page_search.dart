@@ -2,9 +2,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
 import 'package:traveller/app/features/home/Page/country_page.dart';
-import 'package:traveller/features/home/CountriesList/countries.dart';
+import 'package:traveller/app/features/home/CountriesList/countries.dart';
 
-import 'package:traveller/features/home/RandomPage/random_page.dart';
+import 'package:traveller/app/features/home/RandomPage/random_page.dart';
 
 class FirstPageSearch extends StatefulWidget {
   const FirstPageSearch({

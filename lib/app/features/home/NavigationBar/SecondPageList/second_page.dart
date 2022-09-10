@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
+
 import 'package:traveller/app/features/add/add_page.dart';
 
 import 'cubit/second_page_cubit.dart';

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
+
+import 'package:traveller/app/cubit/root_cubit.dart';
+import 'package:traveller/app/features/LoginPage/login_page.dart';
 import 'package:traveller/app/features/home/home_page.dart';
-import 'package:traveller/features/LoginPage/login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -28,14 +31,17 @@ class RootPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<User?>(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
-          final user = snapshot.data;
+    return BlocProvider(
+      create: (context) => RootCubit()..start(),
+      child: BlocBuilder<RootCubit, RootState>(
+        builder: (context, state) {
+          final user = state.user;
           if (user == null) {
             return const LoginPage();
           }
           return HomePagee(user: user);
-        });
+        },
+      ),
+    );
   }
 }
