@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 import 'package:traveller/app/features/add/add_page.dart';
+import 'package:traveller/models/item_model.dart';
 
 import 'cubit/second_page_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,8 +49,8 @@ class ListBody extends StatelessWidget {
       create: (context) => SecondPageCubit()..start(),
       child: BlocBuilder<SecondPageCubit, SecondPageState>(
           builder: (context, state) {
-        final docs = state.items?.docs;
-        if (docs == null) {
+        final itemModels = state.items;
+        if (itemModels.isEmpty) {
           return const SizedBox.shrink();
         }
         return Stack(
@@ -77,9 +78,9 @@ class ListBody extends StatelessWidget {
                     vertical: 20,
                   ),
                   children: [
-                    for (final doc in docs)
+                    for (final itemModel in itemModels)
                       Dismissible(
-                        key: ValueKey(doc.id),
+                        key: ValueKey(itemModel.id),
                         background: const DecoratedBox(
                           decoration: BoxDecoration(
                             color: Colors.red,
@@ -101,10 +102,10 @@ class ListBody extends StatelessWidget {
                         onDismissed: (direction) {
                           context
                               .read<SecondPageCubit>()
-                              .remove(documentID: doc.id);
+                              .remove(documentID: itemModel.id);
                         },
                         child: _ListViewItem(
-                          document: doc,
+                          itemModel: itemModel,
                         ),
                       ),
                   ],
@@ -121,10 +122,10 @@ class ListBody extends StatelessWidget {
 class _ListViewItem extends StatelessWidget {
   const _ListViewItem({
     Key? key,
-    required this.document,
+    required this.itemModel,
   }) : super(key: key);
 
-  final QueryDocumentSnapshot<Map<String, dynamic>> document;
+  final ItemModel itemModel;
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +146,7 @@ class _ListViewItem extends StatelessWidget {
                 color: Colors.black12,
                 image: DecorationImage(
                   image: NetworkImage(
-                    document['image_url'],
+                    itemModel.imageURL,
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -161,7 +162,7 @@ class _ListViewItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          document['title'],
+                          itemModel.title,
                           style: const TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
@@ -169,9 +170,7 @@ class _ListViewItem extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         Text(
-                          (document['release_date'] as Timestamp)
-                              .toDate()
-                              .toString(),
+                          itemModel.relaseDate.toString(),
                         ),
                       ],
                     ),

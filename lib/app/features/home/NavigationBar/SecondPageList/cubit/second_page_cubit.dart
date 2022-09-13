@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:traveller/models/item_model.dart';
 
 part 'second_page_state.dart';
 
@@ -16,7 +17,15 @@ class SecondPageCubit extends Cubit<SecondPageState> {
         .snapshots()
         .listen(
       (items) {
-        emit(SecondPageState(items: items));
+        final itemModels = items.docs.map((doc) {
+          return ItemModel(
+            id: doc.id,
+            title: doc['title'],
+            imageURL: doc['image_url'],
+            relaseDate: (doc['release_date'] as Timestamp).toDate(),
+          );
+        }).toList();
+        emit(SecondPageState(items: itemModels));
       },
     )..onError(
         (error) {
