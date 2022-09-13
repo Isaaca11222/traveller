@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:traveller/app/cubit/root_cubit.dart';
 import 'package:traveller/app/features/LoginPage/login_page.dart';
@@ -17,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Traveller',
       theme: ThemeData(
-        primaryColor: Color.fromARGB(137, 95, 94, 92),
+        primaryColor: const Color.fromARGB(137, 95, 94, 92),
       ),
       home: const RootPage(),
     );
