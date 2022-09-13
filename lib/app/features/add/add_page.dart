@@ -24,6 +24,13 @@ class _AddPageState extends State<AddPage> {
         listener: (context, state) {
           if (state.saved) {
             Navigator.of(context).pop();
+            // pop back to list after add is saved
+          }
+          if (state.errorMessage.isNotEmpty) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(state.errorMessage)),
+              //show snackbar on adding error
+            );
           }
         },
         child: BlocBuilder<AddCubit, AddState>(
