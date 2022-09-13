@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:traveller/app/features/add/add_page.dart';
 import 'package:traveller/models/item_model.dart';
+import 'package:traveller/repositories/items_repository.dart';
 
 import 'cubit/second_page_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,7 +47,7 @@ class ListBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SecondPageCubit()..start(),
+      create: (context) => SecondPageCubit(ItemsRepository())..start(),
       child: BlocBuilder<SecondPageCubit, SecondPageState>(
           builder: (context, state) {
         final itemModels = state.items;
@@ -183,15 +184,15 @@ class _ListViewItem extends StatelessWidget {
                   margin: const EdgeInsets.all(10),
                   padding: const EdgeInsets.all(10),
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
-                        '0',
-                        style: TextStyle(
+                        itemModel.daysLeft(),
+                        style: const TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('days left'),
+                      const Text('days left'),
                     ],
                   ),
                 ),

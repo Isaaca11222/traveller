@@ -10,4 +10,9 @@ class ItemModel {
   final String title;
   final String imageURL;
   final DateTime relaseDate;
+
+  String daysLeft() {
+    return relaseDate.difference(DateTime.now()).inDays.toString();
+    //porównuje dwie daty zainicjowaną z dzisiejszą
+  }
 }

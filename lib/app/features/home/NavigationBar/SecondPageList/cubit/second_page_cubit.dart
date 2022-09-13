@@ -3,29 +3,21 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:traveller/models/item_model.dart';
+import 'package:traveller/repositories/items_repository.dart';
 
 part 'second_page_state.dart';
 
 class SecondPageCubit extends Cubit<SecondPageState> {
-  SecondPageCubit() : super(const SecondPageState());
+  SecondPageCubit(this._itemsRepository) : super(const SecondPageState());
+
+  final ItemsRepository _itemsRepository;
+
   StreamSubscription? _streamSubscription;
 
   Future<void> start() async {
-    _streamSubscription = FirebaseFirestore.instance
-        .collection('items')
-        .orderBy('release_date')
-        .snapshots()
-        .listen(
+    _streamSubscription = _itemsRepository.getItemsStream().listen(
       (items) {
-        final itemModels = items.docs.map((doc) {
-          return ItemModel(
-            id: doc.id,
-            title: doc['title'],
-            imageURL: doc['image_url'],
-            relaseDate: (doc['release_date'] as Timestamp).toDate(),
-          );
-        }).toList();
-        emit(SecondPageState(items: itemModels));
+        emit(SecondPageState(items: items));
       },
     )..onError(
         (error) {
@@ -36,10 +28,7 @@ class SecondPageCubit extends Cubit<SecondPageState> {
 
   Future<void> remove({required String documentID}) async {
     try {
-      await FirebaseFirestore.instance
-          .collection('items')
-          .doc(documentID)
-          .delete();
+      await _itemsRepository.delete(id: documentID);
     } catch (error) {
       emit(
         const SecondPageState(removingErrorOccured: true),
