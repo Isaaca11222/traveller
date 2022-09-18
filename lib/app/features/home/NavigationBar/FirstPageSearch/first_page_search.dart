@@ -39,32 +39,35 @@ class _FirstPageSearchState extends State<FirstPageSearch> {
               children: [
                 Container(
                   margin: (const EdgeInsets.all(20.0)),
-                  child: TextField(
-                    controller: controller,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: const Color.fromARGB(136, 122, 117, 117),
-                      prefixIcon: const Icon(Icons.search),
-                      suffixIcon: controller.text.isNotEmpty
-                          ? GestureDetector(
-                              child: Icon(Icons.close, color: style.color),
-                              onTap: () {
-                                controller.clear();
-                                FocusScope.of(context)
-                                    .requestFocus(FocusNode());
+                  child: InkWell(
+                    onTap: () {},
+                    child: TextField(
+                      controller: controller,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color.fromARGB(136, 122, 117, 117),
+                        prefixIcon: const Icon(Icons.search),
+                        suffixIcon: controller.text.isNotEmpty
+                            ? GestureDetector(
+                                child: Icon(Icons.close, color: style.color),
+                                onTap: () {
+                                  controller.clear();
+                                  FocusScope.of(context)
+                                      .requestFocus(FocusNode());
 
-                                searchCountry('');
-                              },
-                            )
-                          : null,
-                      hintText: 'Search',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.grey),
+                                  searchCountry('');
+                                },
+                              )
+                            : null,
+                        hintText: 'Search',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(color: Colors.grey),
+                        ),
                       ),
+                      onChanged: searchCountry,
+                      style: const TextStyle(fontSize: 20),
                     ),
-                    onChanged: searchCountry,
-                    style: const TextStyle(fontSize: 20),
                   ),
                 ),
                 Expanded(
