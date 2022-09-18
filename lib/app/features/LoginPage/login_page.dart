@@ -32,12 +32,14 @@ class _LoginPageState extends State<LoginPage> {
           child: Center(
             child: ListView(
               shrinkWrap: true,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               children: [
                 Center(
-                  child: Text(isCreatingAccount == true
-                      ? 'Zarejestruj się'
-                      : "Zaloguj się"),
+                  child: Text(
+                      style: const TextStyle(fontSize: 30),
+                      isCreatingAccount == true
+                          ? 'Zarejestruj się'
+                          : "Zaloguj się"),
                 ),
                 const Padding(
                   padding: EdgeInsets.all(20.0),
@@ -72,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () async {
-                    if (isCreatingAccount == true) {
+                    if (isCreatingAccount == false) {
                       // rejestracja
                       try {
                         await FirebaseAuth.instance.signInWithEmailAndPassword(
