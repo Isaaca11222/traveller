@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class ItemModel {
   ItemModel({
     required this.id,
@@ -13,6 +15,10 @@ class ItemModel {
 
   String daysLeft() {
     return relaseDate.difference(DateTime.now()).inDays.toString();
-    //porównuje dwie daty zainicjowaną z dzisiejszą
+    //compare 2 diffrent dates ,nowaday and choosen
+  }
+
+  String relaseDateFormated() {
+    return DateFormat.yMd().format(relaseDate);
   }
 }

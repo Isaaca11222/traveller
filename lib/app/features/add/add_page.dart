@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:traveller/app/features/add/cubit/add_cubit.dart';
 import 'package:traveller/repositories/items_repository.dart';
 
@@ -72,7 +73,9 @@ class _AddPageState extends State<AddPage> {
                     _releaseDate = newValue;
                   });
                 },
-                selectedDateFormatted: _releaseDate?.toIso8601String(),
+                selectedDateFormatted: _releaseDate == null
+                    ? null
+                    : DateFormat.yMEd().format(_releaseDate!),
               ),
             );
           },
