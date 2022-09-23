@@ -1,8 +1,9 @@
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
-import 'package:traveller/app/features/home/Page/country_page.dart';
+
 import 'package:traveller/app/features/home/CountriesList/countries.dart';
+import 'package:traveller/app/features/home/Pages/country_page.dart';
 
 import 'package:traveller/app/features/home/RandomPage/random_page.dart';
 

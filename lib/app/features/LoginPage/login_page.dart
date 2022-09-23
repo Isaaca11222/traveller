@@ -37,9 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                 Center(
                   child: Text(
                       style: const TextStyle(fontSize: 30),
-                      isCreatingAccount == true
-                          ? 'Zarejestruj się'
-                          : "Zaloguj się"),
+                      isCreatingAccount == true ? 'Sing up' : "Login"),
                 ),
                 const Padding(
                   padding: EdgeInsets.all(20.0),
@@ -49,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: const InputDecoration(
                     filled: true,
                     fillColor: Color.fromARGB(136, 122, 117, 117),
+                    label: Text('Email'),
                     hintText: "Email",
                     border: OutlineInputBorder(),
                   ),
@@ -61,7 +60,8 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: const Color.fromARGB(136, 122, 117, 117),
-                    hintText: "Hasło",
+                    label: const Text('Password'),
+                    hintText: "Password",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: const BorderSide(color: Colors.grey),
@@ -101,9 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                       }
                     }
                   },
-                  child: Text(isCreatingAccount == true
-                      ? 'Zarejestruj się '
-                      : 'Zaloguj się'),
+                  child: Text(isCreatingAccount == true ? 'Sing up ' : 'Login'),
                 ),
                 const SizedBox(height: 20),
                 if (isCreatingAccount == false) ...[
@@ -113,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                         isCreatingAccount = true;
                       });
                     },
-                    child: const Text('Utwórz konto'),
+                    child: const Text('Create new account'),
                   ),
                 ],
                 if (isCreatingAccount == true) ...[
@@ -123,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                         isCreatingAccount = false;
                       });
                     },
-                    child: const Text('Masz już konto?'),
+                    child: const Text('Already have an account?'),
                   ),
                 ],
               ],

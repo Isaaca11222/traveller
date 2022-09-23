@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:traveller/app/domain/models/item_model.dart';
+import 'package:traveller/app/domain/repositories/items_repository.dart';
 
 import 'package:traveller/app/features/details/cubit/details_cubit.dart';
-import 'package:traveller/models/item_model.dart';
-import 'package:traveller/repositories/items_repository.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 

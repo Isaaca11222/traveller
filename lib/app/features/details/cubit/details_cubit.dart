@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:traveller/models/item_model.dart';
-import 'package:traveller/repositories/items_repository.dart';
+import 'package:traveller/app/domain/models/item_model.dart';
+import 'package:traveller/app/domain/repositories/items_repository.dart';
 
 part 'details_state.dart';
 

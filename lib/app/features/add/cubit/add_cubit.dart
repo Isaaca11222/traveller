@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:traveller/repositories/items_repository.dart';
+import 'package:traveller/app/domain/repositories/items_repository.dart';
 
 part 'add_state.dart';
 

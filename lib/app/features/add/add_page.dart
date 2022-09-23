@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:traveller/app/domain/repositories/items_repository.dart';
 import 'package:traveller/app/features/add/cubit/add_cubit.dart';
-import 'package:traveller/repositories/items_repository.dart';
 
 class AddPage extends StatefulWidget {
   const AddPage({

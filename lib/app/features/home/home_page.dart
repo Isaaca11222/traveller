@@ -5,6 +5,8 @@ import 'package:traveller/app/features/home/NavigationBar/FirstPageSearch/first_
 import 'package:traveller/app/features/home/NavigationBar/FourthPageMyAccount/fourth_page.dart';
 import 'package:traveller/app/features/home/NavigationBar/SecondPageList/second_page.dart';
 import 'package:traveller/app/features/home/NavigationBar/ThirdPageMap/third_page.dart';
+import 'package:traveller/app/features/home/NavigationDraverWidget/navigation_drawer_widget.dart';
+import 'package:traveller/app/features/home/QuestionPage/question_page.dart';
 
 class HomePagee extends StatefulWidget {
   const HomePagee({
@@ -24,6 +26,7 @@ class _HomePageeState extends State<HomePagee> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -34,6 +37,16 @@ class _HomePageeState extends State<HomePagee> {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const QuestionPage()),
+              );
+            },
+            icon: const Icon(Icons.question_mark),
+          ),
+        ],
         backgroundColor: Colors.transparent,
       ),
       body: Builder(builder: (context) {
@@ -47,7 +60,7 @@ class _HomePageeState extends State<HomePagee> {
           return const ThirdPageMap();
         }
 
-        return FourthPage2(user: widget.user);
+        return FourthPage(user: widget.user);
       }),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,

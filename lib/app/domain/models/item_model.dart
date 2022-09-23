@@ -12,6 +12,7 @@ class ItemModel {
   final String title;
   final String imageURL;
   final DateTime relaseDate;
+  //map
 
   String daysLeft() {
     return relaseDate.difference(DateTime.now()).inDays.toString();
@@ -20,5 +21,6 @@ class ItemModel {
 
   String relaseDateFormated() {
     return DateFormat.yMd().format(relaseDate);
+    //date  format
   }
 }

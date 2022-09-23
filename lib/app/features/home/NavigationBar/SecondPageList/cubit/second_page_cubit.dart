@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:traveller/models/item_model.dart';
-import 'package:traveller/repositories/items_repository.dart';
+import 'package:traveller/app/domain/models/item_model.dart';
+import 'package:traveller/app/domain/repositories/items_repository.dart';
 
 part 'second_page_state.dart';
 

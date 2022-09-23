@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 
-
-
-class FourthPage2 extends StatelessWidget {
-  const FourthPage2({
+class FourthPage extends StatelessWidget {
+  const FourthPage({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -30,7 +28,8 @@ class FourthPage2 extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 margin: const EdgeInsets.all(20.0),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 146, 138, 138).withOpacity(0.7),
+                  color:
+                      const Color.fromARGB(255, 146, 138, 138).withOpacity(0.7),
                   borderRadius: const BorderRadius.all(Radius.circular(12)),
                 ),
                 height: 500,
@@ -39,7 +38,7 @@ class FourthPage2 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Jestes zalogowany jako ${user.email}',
+                        'You are logged in as ${user.email}',
                       ),
                       const SizedBox(
                         height: 20,
@@ -48,7 +47,7 @@ class FourthPage2 extends StatelessWidget {
                         onPressed: () {
                           FirebaseAuth.instance.signOut();
                         },
-                        child: const Text('Wyloguj'),
+                        child: const Text('Logout'),
                       ),
                     ],
                   ),
