@@ -19,7 +19,10 @@ class NavigationDrawerWidget extends StatelessWidget {
               text: 'Destinations',
               icon: Icons.map_sharp,
             ),
-            buildMenuItem(text: 'Account', icon: Icons.person),
+            buildMenuItem(
+              text: 'Account',
+              icon: Icons.person,
+            ),
             buildMenuItem(
               text: 'Credits',
               icon: Icons.create,

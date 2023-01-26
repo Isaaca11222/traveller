@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   onPressed: () async {
                     if (isCreatingAccount == false) {
-                      // rejestracja
+                      //logowanie
                       try {
                         await FirebaseAuth.instance.signInWithEmailAndPassword(
                           email: emailController.text,
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       }
                     } else {
-                      // logowanie
+                      //rejestracja
                       try {
                         await FirebaseAuth.instance
                             .createUserWithEmailAndPassword(

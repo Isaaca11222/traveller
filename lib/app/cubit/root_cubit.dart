@@ -48,12 +48,23 @@ class RootCubit extends Cubit<RootState> {
 
     _streamSubscription = FirebaseAuth.instance.authStateChanges().listen(
       (user) {
-        emit(RootState(user: user, isLoading: false, errorMessage: ''));
+        emit(
+          RootState(
+            user: user,
+            isLoading: false,
+            errorMessage: '',
+          ),
+        );
       },
     )..onError(
         (error) {
-          emit(RootState(
-              user: null, isLoading: false, errorMessage: error.toString()));
+          emit(
+            RootState(
+              user: null,
+              isLoading: false,
+              errorMessage: error.toString(),
+            ),
+          );
         },
       );
   }
@@ -62,5 +73,6 @@ class RootCubit extends Cubit<RootState> {
   Future<void> close() {
     _streamSubscription?.cancel();
     return super.close();
+    // stop listening after go out of screen
   }
 }

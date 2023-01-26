@@ -8,6 +8,7 @@ import 'package:traveller/app/features/home/NavigationBar/ThirdPageMap/third_pag
 import 'package:traveller/app/features/home/NavigationDraverWidget/navigation_drawer_widget.dart';
 import 'package:traveller/app/features/home/QuestionPage/question_page.dart';
 
+
 class HomePagee extends StatefulWidget {
   const HomePagee({
     Key? key,
@@ -26,7 +27,7 @@ class _HomePageeState extends State<HomePagee> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavigationDrawerWidget(),
+      drawer: const NavigationDrawerWidget(),
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,

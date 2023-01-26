@@ -1,6 +1,7 @@
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
+import 'package:traveller/app/features/add/add_page.dart';
 import 'package:traveller/app/features/home/CountriesList/countries.dart';
 
 class CountryPage extends StatelessWidget {
@@ -24,7 +25,14 @@ class CountryPage extends StatelessWidget {
         fit: BoxFit.cover,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const AddPage(),
+              fullscreenDialog: true,
+            ),
+          );
+        },
         child: const Icon(Icons.add),
       ),
     );

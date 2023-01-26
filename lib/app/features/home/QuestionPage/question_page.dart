@@ -19,12 +19,13 @@ class QuestionPage extends StatelessWidget {
             ),
           ],
         ),
+        backgroundColor: Colors.transparent ,
       ),
       body: Container(
         constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images/tlo4.jpg'), fit: BoxFit.cover),
+              image: AssetImage('images/lodka.jpg'), fit: BoxFit.cover),
         ),
         child: Center(
           child: Column(
@@ -44,7 +45,13 @@ class QuestionPage extends StatelessWidget {
                     shrinkWrap: true,
                     children: const [
                       Text(
-                          "Traveller is an application designed to search for unusual travel destinations. This can be done through analog search or random search by using the 'draw random' button.You can save the searched places to your list of trips to be taken in the form of tiles. In the future, users will also be able to save places on the map and rate their trips. Other users who wish to travel to their favorite beautiful places in the world will also be able to view ratings and trips. "),
+                        "Traveller is an application designed to search for unusual travel destinations. This can be done through analog search or random search by using the 'draw random' button.You can save the searched places to your list of trips to be taken in the form of tiles. \nIn the future, users will also be able to save places on the map and rate their trips. Other users who wish to travel to their favorite beautiful places in the world will also be able to view ratings and trips. ",
+                        style: TextStyle(
+                          fontSize: 19,
+                          wordSpacing: 8,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
                     ],
                   ),
                 ),

@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 import 'package:traveller/app/features/home/CountriesList/countries.dart';
-import 'package:traveller/app/features/home/Pages/country_page.dart';
+import 'package:traveller/app/features/home/CountryPage/country_page.dart';
 
 import 'package:traveller/app/features/home/RandomPage/random_page.dart';
 
@@ -40,35 +40,32 @@ class _FirstPageSearchState extends State<FirstPageSearch> {
               children: [
                 Container(
                   margin: (const EdgeInsets.all(20.0)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: TextField(
-                      controller: controller,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: const Color.fromARGB(136, 122, 117, 117),
-                        prefixIcon: const Icon(Icons.search),
-                        suffixIcon: controller.text.isNotEmpty
-                            ? GestureDetector(
-                                child: Icon(Icons.close, color: style.color),
-                                onTap: () {
-                                  controller.clear();
-                                  FocusScope.of(context)
-                                      .requestFocus(FocusNode());
+                  child: TextField(
+                    controller: controller,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: const Color.fromARGB(136, 122, 117, 117),
+                      prefixIcon: const Icon(Icons.search),
+                      suffixIcon: controller.text.isNotEmpty
+                          ? GestureDetector(
+                              child: Icon(Icons.close, color: style.color),
+                              onTap: () {
+                                controller.clear();
+                                FocusScope.of(context)
+                                    .requestFocus(FocusNode());
 
-                                  searchCountry('');
-                                },
-                              )
-                            : null,
-                        hintText: 'Search',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Colors.grey),
-                        ),
+                                searchCountry('');
+                              },
+                            )
+                          : null,
+                      hintText: 'Search',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.grey),
                       ),
-                      onChanged: searchCountry,
-                      style: const TextStyle(fontSize: 20),
                     ),
+                    onChanged: searchCountry,
+                    style: const TextStyle(fontSize: 20),
                   ),
                 ),
                 Expanded(
@@ -102,7 +99,7 @@ class _FirstPageSearchState extends State<FirstPageSearch> {
                 const SizedBox(height: 100),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromARGB(166, 34, 29, 29),
+                    backgroundColor: const Color.fromARGB(166, 34, 29, 29),
                   ),
                   child: const Text('Draw random'),
                   onPressed: () {
