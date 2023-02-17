@@ -2,7 +2,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
 import 'package:traveller/app/features/add/add_page.dart';
-import 'package:traveller/app/features/home/CountriesList/countries.dart';
+import 'package:traveller/app/features/pages/CountriesList/countries.dart';
 
 class CountryPage extends StatelessWidget {
   final Country country;
