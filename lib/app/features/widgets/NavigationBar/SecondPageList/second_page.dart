@@ -6,7 +6,7 @@ import 'package:traveller/app/domain/repositories/items_repository.dart';
 import 'package:traveller/app/features/add/add_page.dart';
 import 'package:traveller/app/features/details/pages/details_page.dart';
 
-import 'package:traveller/app/features/pages/navigationbar/secondpagelist/cubit/second_page_cubit.dart';
+import 'package:traveller/app/features/widgets/navigationbar/secondpagelist/cubit/second_page_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SecondPageList extends StatelessWidget {

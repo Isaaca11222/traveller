@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:traveller/app/cubit/root_cubit.dart';
 import 'package:traveller/app/features/LoginPage/login_page.dart';
-import 'package:traveller/app/features/pages/home_page.dart';
+import 'package:traveller/app/features/widgets/home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

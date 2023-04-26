@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:traveller/app/features/pages/NavigationBar/FirstPageSearch/first_page_search.dart';
-import 'package:traveller/app/features/pages/NavigationBar/FourthPageMyAccount/fourth_page.dart';
-import 'package:traveller/app/features/pages/NavigationBar/SecondPageList/second_page.dart';
-import 'package:traveller/app/features/pages/NavigationBar/ThirdPageMap/third_page.dart';
-import 'package:traveller/app/features/pages/NavigationDraverWidget/navigation_drawer_widget.dart';
-import 'package:traveller/app/features/pages/QuestionPage/question_page.dart';
+import 'package:traveller/app/features/widgets/NavigationBar/FirstPageSearch/first_page_search.dart';
+import 'package:traveller/app/features/widgets/NavigationBar/FourthPageMyAccount/fourth_page.dart';
+import 'package:traveller/app/features/widgets/NavigationBar/SecondPageList/second_page.dart';
+import 'package:traveller/app/features/widgets/NavigationBar/ThirdPageMap/third_page.dart';
+import 'package:traveller/app/features/widgets/NavigationDraverWidget/navigation_drawer_widget.dart';
+import 'package:traveller/app/features/widgets/QuestionPage/question_page.dart';
 
 class HomePagee extends StatefulWidget {
   const HomePagee({
